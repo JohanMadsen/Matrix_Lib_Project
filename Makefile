@@ -2,7 +2,7 @@ TARGET	= libmatmult.so
 LIBSRCS	= matmult.c
 LIBOBJS	= matmult.o
 
-OPT	= -g -O3
+OPT	= -g -Ofast -march=native -fno-trapping-math -frename-registers
 PIC	= -fPIC
 
 CC	= gcc
