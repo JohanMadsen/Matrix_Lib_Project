@@ -1,12 +1,15 @@
 
 #include "matmult.h"
 #include "cblas.h"
+
 #define MIN(x, y) (((x) < (y)) ? (x) : (y))
+
 void matmult_mnk(int m, int n, int k, double **A, double **B, double **C) {
     int i1, i, j, l;
     for (i1 = 0; i1 < m * n; ++i1) {
         (*C)[i1] = 0;
     }
+
     for (i = 0; i < m; ++i) {
         for (j = 0; j < n; ++j) {
             for (l = 0; l < k; ++l) {
@@ -111,17 +114,20 @@ void matmult_lib(int m, int n, int k, double **A, double **B, double **C) {
 }
 
 void matmult_blk(int m, int n, int k, double **A, double **B, double **C, int bs) {
-    int i1, i, j, l,j1;
-    for (i1 = 0; i1 < m * n; ++i1) {
-        (*C)[i1] = 0;
+    int i, j, i1, l, l1;
+    for (i = 0; i < m * n; ++i) {
+        (*C)[i] = 0;
     }
-    for (j1 = 0; j1 <m; j1+=bs) {
-        for (i = 0; i < m; ++i) {
-            for (l = 0; l < k; ++l) {
-                for (j = 0; j <MIN(m-j1,bs) ; ++j) {
-                    C[i][j1+j] += A[i][l] * B[l][j+j1];
+    for (i1 = 0; i1 < m; i1 += bs) {
+        for (l1 = 0; l1 < k; l1 += bs) {
+            for (i = i1; i < MIN(i1+bs, m); ++i) {
+                for (l = l1; l < MIN(l1 + bs, k); ++l) {
+                    for (j = 0; j < n; ++j) {
+                        C[i][j] += A[i][l] * B[l][j];
+                    }
                 }
             }
         }
     }
 }
+
