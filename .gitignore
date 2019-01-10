@@ -1,1 +1,3 @@
 libmatmult.so
+matmult.o
+matmult_sim*

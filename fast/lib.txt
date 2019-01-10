@@ -1,0 +1,17 @@
+    24.000   5325.066 # matmult_lib
+   600.000  12237.408 # matmult_lib
+  1944.000  12259.719 # matmult_lib
+  4056.000  12053.472 # matmult_lib
+  6936.000  12027.514 # matmult_lib
+ 10584.000  12056.537 # matmult_lib
+ 15000.000  12110.389 # matmult_lib
+ 20184.000  11996.646 # matmult_lib
+ 26136.000  12109.693 # matmult_lib
+ 32856.000  12177.192 # matmult_lib
+ 40344.000  12261.865 # matmult_lib
+ 48600.000  12253.106 # matmult_lib
+ 57624.000  12262.156 # matmult_lib
+ 67416.000  12269.514 # matmult_lib
+ 77976.000  12650.069 # matmult_lib
+ 89304.000  12691.221 # matmult_lib
+101400.000  12667.028 # matmult_lib
