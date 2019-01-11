@@ -126,6 +126,7 @@ void matmult_blk(int m, int n, int k, double **A, double **B, double **C, int bs
                 for (j = 0; j < n; ++j)
                     C[i][j] += A[i][l] * B[l][j];
     */
+    /*
     // 2 Blocks on dimensions m and k
     for (i1 = 0; i1 < m; i1 += bs)
         for (l1 = 0; l1 < k; l1 += bs)
@@ -133,9 +134,9 @@ void matmult_blk(int m, int n, int k, double **A, double **B, double **C, int bs
                 for (l = l1; l < MIN(l1 + bs, k); ++l)
                     for (j = 0; j < n; ++j)
                         C[i][j] += A[i][l] * B[l][j];
-    
+    */
     // 3 Blocks on dimensions m, k and n
-    /*
+    
     for (i1 = 0; i1 < m; i1 += bs)
         for (l1 = 0; l1 < k; l1 += bs)
             for (j1 = 0; j1 < n; j1 += bs)
@@ -143,6 +144,6 @@ void matmult_blk(int m, int n, int k, double **A, double **B, double **C, int bs
                     for (l = l1; l < MIN(l1 + bs, k); ++l)
                         for (j = j1; j < MIN(j1 + bs, n); ++j)
                             C[i][j] += A[i][l] * B[l][j];
-    */
+    
 }
 

@@ -11,10 +11,8 @@ module load gcc/8.2.0
 mkdir blk
 
 rm -f blk/best_blk.txt
-./matmult_c.gcc blk 1000 1000 1000 4  >> blk/best_blk.txt
-./matmult_c.gcc blk 1000 1000 1000 8  >> blk/best_blk.txt
-./matmult_c.gcc blk 1000 1000 1000 16  >> blk/best_blk.txt
-./matmult_c.gcc blk 1000 1000 1000 32  >> blk/best_blk.txt
-./matmult_c.gcc blk 1000 1000 1000 64  >> blk/best_blk.txt
-./matmult_c.gcc blk 1000 1000 1000 128  >> blk/best_blk.txt
-./matmult_c.gcc blk 1000 1000 1000 256  >> blk/best_blk.txt
+./matmult_c.gcc blk 2500 2500 2500 32  >> blk/best_blk.txt
+./matmult_c.gcc blk 2500 2500 2500 64  >> blk/best_blk.txt
+./matmult_c.gcc blk 2500 2500 2500 128  >> blk/best_blk.txt
+./matmult_c.gcc blk 2500 2500 2500 256  >> blk/best_blk.txt
+./matmult_c.gcc blk 2500 2500 2500 512  >> blk/best_blk.txt
